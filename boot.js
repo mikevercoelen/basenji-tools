@@ -18,15 +18,13 @@ export default function boot (configureRoutes, options = {}) {
   })
 
   configureRoutes(history, store, (routes) => {
-    document.addEventListener('DOMContentLoaded', (event) => {
-      render(
-        <Provider store={store}>
-          <Router history={history}>
-            {routes}
-          </Router>
-        </Provider>,
-        document.getElementById('root')
-      )
-    })
+    render(
+      <Provider store={store}>
+        <Router history={history}>
+          {routes}
+        </Router>
+      </Provider>,
+      document.getElementById('root')
+    )
   })
 }
